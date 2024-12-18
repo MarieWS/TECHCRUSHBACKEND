@@ -1,0 +1,24 @@
+{
+  "name": "delish-nutrio",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "delish",
+    "nutrition",
+    "food",
+    "meal plan"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "This is the backend codebase of Delish Nutrio web app. This is an app that gives personalized nutrition.",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5",
+    "sequelize": "^6.37.5"
+  }
+}
