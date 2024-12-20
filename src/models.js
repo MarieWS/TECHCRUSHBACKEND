@@ -1,4 +1,4 @@
-import mysqldb from "../config/mysqldb";
+import mysqldb from "./config/mysqldb.js";
 import { DataTypes } from "sequelize";
 
 const User = mysqldb.define(
@@ -7,7 +7,7 @@ const User = mysqldb.define(
         firstname: {type: DataTypes.STRING, allowNull: false},
         lastname: {type: DataTypes.STRING, allowNull: false},
         username: {type: DataTypes.STRING, allowNull: true},
-        phoneNumber: {type: DataTypes.INTEGER, allowNull: false, unique: true},
+        phoneNumber: {type: DataTypes.STRING, allowNull: false, unique: true},
         email: {type: DataTypes.STRING, allowNull: false, unique: true},
         password: {type: DataTypes.STRING, allowNull: false}
     },
