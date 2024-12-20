@@ -21,4 +21,4 @@ export const connectMySQL = async () => {
   }
 }
 
-export default database
+export default mysqldb
