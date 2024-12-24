@@ -1,5 +1,5 @@
 import { body, validationResult } from "express-validator";
-import User from "./models.js";
+import {User} from "./models.js";
 
 // Custom validations
 let validateIfEmailExists = async (value) => {
@@ -13,7 +13,7 @@ let validateIfEmailExists = async (value) => {
 }
 
 let validateIfPhoneNumberExists = async (value) => {
-    const existingNumber = await User.findOne({ where: { phoneNumber: value } })
+    const existingNumber = await User.findOne({ where: { phone_number: value } })
 
     if (existingNumber) {
         throw new Error("Phone Number already exists!");
@@ -37,7 +37,7 @@ export const validateForm = [
         .isString().notEmpty().withMessage('Please, input your last name'),
     body('username')
         .isString().notEmpty().withMessage('Please, input your username'),
-    body('phoneNumber')
+    body('phone_number')
         .isNumeric().notEmpty().isLength({ min: 11, max: 11 }).withMessage('Provide a valid phone number')
         .custom(validateIfPhoneNumberExists),
     body('email')
