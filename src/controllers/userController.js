@@ -15,6 +15,7 @@ export const createNewProfile = async (req, res) => {
     const { gender, age, country, region, dietary_preferences, health_goals, activity_levels, allergies, medical_condition, height, weight } = req.body;
     try {
         const userProfile = await services.createNewProfile(gender, age, country, region, dietary_preferences, health_goals, activity_levels, allergies, medical_condition, height, weight, UserId )
+        res.status(201).json({ message: "Profile created", userProfile })
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
@@ -25,6 +26,18 @@ export const getUserProfile = async (req, res) => {
     try {
         const profile = await services.getUserProfile(UserId);
         res.status(200).json(profile)
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
+
+export const updateUserProfile = async (req, res) => {
+    const UserId = req.user
+    const { gender, age, country, region, dietary_preferences, health_goals, activity_levels, allergies, medical_condition, height, weight } = req.body;
+
+    try {
+        const updateProfile = await services.updateProfile(gender, age, country, region, dietary_preferences, health_goals, activity_levels, allergies, medical_condition, height, weight, UserId)
+        res.status(200).json({ message: "Profile updated", updateProfile })
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
