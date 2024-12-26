@@ -1,4 +1,4 @@
-import * as services from "./services.js";
+import * as services from "../services.js";
 
 export const createNewUser = async (req, res) => {
     const {firstname, lastname, username, phone_number, email, password} = req.body;
