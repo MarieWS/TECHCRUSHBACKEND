@@ -1,15 +1,15 @@
 import jwt from "jsonwebtoken"
 
 const auth = async (req, res, next) => {
-    const token = req.header("Authorization").replace("Bearer ", "");
-    console.log(token);
+    const token = req.header("Authorization");
 
     if (!token) {
         res.status(401).json({message: "Access denied"})
     }
 
     try {
-        const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+        const editedToken = token.replace("Bearer ", "");
+        const decodedToken = jwt.verify(editedToken, process.env.JWT_SECRET);
         req.user = decodedToken.userID;
         next();
     } catch (error) {

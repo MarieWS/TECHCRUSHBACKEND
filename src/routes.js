@@ -9,7 +9,7 @@ const router = express.Router();
 router.post('/register', validateForm, userControllers.createNewUser);
 router.post('/login', login);
 router.post('/newprofile', auth, userControllers.createNewProfile);
-
+router.get('/profile', auth, userControllers.getUserProfile);
 
 
 export default router
