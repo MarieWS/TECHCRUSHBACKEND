@@ -1,7 +1,8 @@
 import jwt from "jsonwebtoken"
 
 const auth = async (req, res, next) => {
-    const token = req.header("Authorization").replace("Bearer", "");
+    const token = req.header("Authorization").replace("Bearer ", "");
+    console.log(token);
 
     if (!token) {
         res.status(401).json({message: "Access denied"})
@@ -12,7 +13,7 @@ const auth = async (req, res, next) => {
         req.user = decodedToken.userID;
         next();
     } catch (error) {
-        res.json({message: "Invalid token"})
+        res.status(400).json({message: error.message})
     }
 }
 
