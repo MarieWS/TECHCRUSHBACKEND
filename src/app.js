@@ -3,6 +3,8 @@ import { config } from "dotenv";
 config();
 import { connectMySQL } from "./config/mysqldb.js";
 import router from "./routes.js";
+import swaggerDocs from "./config/swagger.js";
+import swaggerUi from "swagger-ui-express";
 
 const app = express();
 
@@ -13,6 +15,7 @@ async function startServer(params) {
     await connectMySQL();
     
     app.use('/api', router)
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
     app.listen(3000, () => {
         console.log('Server is running on port 3000')
