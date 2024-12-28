@@ -10,10 +10,13 @@ const mealSchema = new mongoose.Schema({
     spice_level: { type: String, required: true },
     price_range: { type: String, required: true },
     nutritional_content: { type: String, required: true },
+    calories_contained: { type: Number, required: true },
+    diet_type: { type: String, required: true },
     best_eaten_as: { type: String, required: true },
     suitable_for: { type: [String], required: true },
+    health_benefit: { type: String, required: true },
     not_suitable_for: { type: [String], required: true },
     cooking_instructions: { type: String, required: true },
 }, {timestamps: true});
 
-const Meal = mongoose.model('Meal', mealSchema);
+export const Meal = mongoose.model('Meal', mealSchema);
