@@ -1,0 +1,47 @@
+.get-in-touch {
+    margin: 60px 90px;
+    margin-bottom: 100px;
+}
+
+.contact-intro {
+    margin-bottom: 40px;
+}
+
+.contact-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 200px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 20px 10px;
+    border-radius: 7px;
+    border: 1px solid red;
+}
+
+.contact-form textarea {
+    padding-bottom: 80px;
+}
+
+.form-btn {
+    border: 1px solid red;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-form button {
+    display: block;
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 7px;
+    border: none;
+}
+

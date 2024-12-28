@@ -1,0 +1,111 @@
+* body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: lato,sans-serif;
+    background-color: rgb(207, 201, 201);
+    
+}
+
+.Logo-container {
+    margin: 36px 50px;
+}
+
+.Logo-container img {
+    width: 60px;
+    height: 60px;
+}
+
+.container {
+    
+    margin: auto 90px;
+    margin-bottom: 90px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+
+
+.h2 {
+    font-size: 24px;
+    
+    margin-bottom: 30px;
+    
+}
+
+.Image-layout {
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+
+
+.left-section {
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    
+}
+
+.right-section {
+    background-color: rgb(221, 212, 212);
+    padding: 50px;
+    border-radius: 5px;
+    
+}
+
+.black-arrow img {
+    width: 20px;
+}
+
+
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Form-group {
+    margin-bottom: 20px;
+    
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #e53935;
+    border-radius: 5px;
+}
+
+button {
+    background-color: red;
+    color: #f1f1f1;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 105%;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+p a {
+    color: #e53935;
+}

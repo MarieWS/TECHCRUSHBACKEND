@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Header */
+header {
+    background-color: #E53935;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+.logo{
+    position: relative;
+    top: 0px;
+    left: 40px;
+}
+.dashboard{
+    position: relative;
+    left: -300px;
+}
+.search{
+    width: 240px;
+    height: 40px;
+    text-align: center;
+    border-radius: 18px;
+    border: 0px black solid;
+    letter-spacing: 1px;
+    position: relative;
+    left: -200px;
+    cursor: pointer;
+}
+body{
+    background-color: #F1F1F1;
+    font-family: "Lato", serif;
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+.main-website{
+    height: 40px;
+    background: #E53935;
+    text-transform: uppercase;
+    border: solid 1px white;
+    width: 160px;
+    border-radius: 5px;
+    position: relative;
+    left: -170px;
+    cursor: pointer;
+}
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: #fff;
+    height: 100vh;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar ul li:hover {
+    background-color: #F1F1F1;
+    color: #E53935;
+}
+.sidebar-links{
+    text-decoration: none;
+    color: #B1B1B1;
+}
+.sidebar-links:hover{
+    color: #E53935;
+}
+.main-content {
+    margin-left: 300px;
+    margin-right: 500px;
+    padding: 20px;
+    flex: 1;
+}
+
+
+
+.shopping-list-container {
+
+    background-color:#dbd2d259;
+    padding: 0;
+}
+.shopping-list-section {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 1150px;
+    height: 732px;
+    top: 121px;
+    left: 333px;
+    margin:auto;
+    margin-top: 0;
+    text-align: center;
+    border: none;
+    border-radius: 1.5rem;
+}
+table {
+    border-collapse: collapse;
+    width:1239px;
+    font-family: lato;
+    font-size:larger;
+    font-weight:lighter;                
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #706c6c;
+}
+.table-head {
+    color: rgb(152, 152, 243);
+
+}           
+
+.total {
+    color: #E53935;
+    border-bottom: none;
+}

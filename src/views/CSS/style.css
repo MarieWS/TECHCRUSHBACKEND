@@ -1,0 +1,308 @@
+.container {
+    background-color: #dbd2d259;
+}
+
+.inner-container {
+    padding-bottom: 5rem;
+
+
+}
+
+.logo-container {
+    width: 65%;
+    padding: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 5rem; */
+}
+
+.logo {
+    border-radius: 50%;
+}
+
+
+.logo-text {
+    text-align: center;
+    font-family: lato;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.logo-setup {
+    font-weight: 900;
+}
+
+.form-section {
+
+    background-color: #c7c0c03f;
+    width: 65%;
+    margin: auto;
+    padding: 5rem 0 1.5rem 0;
+    /* margin-bottom: 3rem; */
+}
+
+.inner-form-section {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: auto;
+}
+
+.form-section-header {
+    font-size: 1.4rem;
+    font-family: lato;
+    font-weight: 400;
+
+}
+
+.gender {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.gender-container {
+    background-color: #fff;
+    width: 75%;
+    color: #bdafaf;
+    height: 3rem;
+    /* width: 9rem; */
+    border: none;
+    border-radius: 0.5rem;
+    /* margin: auto;
+    margin-top: 1rem; */
+    text-align: center;
+    padding-top: 0.5rem;
+
+}
+
+.location-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+    right: 40px;
+}
+
+.location {
+    background-color: #fff;
+    color: #686262;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.Dietary-container {
+    /* background-color: #fff;
+    width: 75%;
+    /* color: #bdafaf; */
+    /* height: 3rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding-top: 0.5rem; */
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+    right: 40px;
+}
+
+.Dietary-preference {
+    background-color: #fff;
+    color: #686262;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.Activity-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+    right: 40px;
+}
+
+.Activity {
+    background-color: #fff;
+    color: #686262;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.Medical-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+    right: 40px;
+}
+
+.Medical {
+    background-color: #fff;
+    color: #686262;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.weight-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+    right: 40px;
+}
+
+.weight {
+    background-color: #fff;
+    color: #686262;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.dob-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+    right: 40px;
+
+}
+
+.dob {
+    background-color: #fff;
+    color: #686262;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.region-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+    right: 40px;
+
+}
+
+.region {
+    background-color: #fff;
+    color: #686262;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.health-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+    right: 40px;
+}
+
+.health {
+    background-color: #fff;
+    color: #686262;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.allergies-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+    right: 40px;
+}
+
+.allergies {
+    background-color: #fff;
+    color: #686262;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.height-container {
+
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    position: relative;
+    right: 40px;
+
+}
+
+.height {
+
+    background-color: #fff;
+    color: #686262;
+    height: 3rem;
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.btn-container {
+    width: 75%;
+    margin: auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    background-color: #ff0000;
+    color: #fff;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+}
+
+.information {
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: lato;
+    font-weight: 400;
+}
+
+.major,
+.min {
+    letter-spacing: 1.4rem;
+}
+
+.major {
+    padding-top: 90px;
+}
+
+.world-container {
+    padding-top: 8rem;
+}
