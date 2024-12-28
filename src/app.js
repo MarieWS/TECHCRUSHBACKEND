@@ -9,12 +9,21 @@ import { connectMongoDB } from "./config/mongodb.js";
 
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
+
+app.use(express.static('./src/views'));
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
 async function startServer(params) {
     await connectMySQL();
     await connectMongoDB()
+    
+    app.get('/', (req, res) => {
+        res.render('index');
+    });
     
     app.use('/api', router)
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
