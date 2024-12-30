@@ -1,10 +1,14 @@
 import * as services from "../services.js";
+import path from "path";
+
+const __dirname = import.meta.dirname
 
 export const createNewUser = async (req, res) => {
     const { firstname, lastname, username, phone_number, email, password } = req.body;
     try {
         const user = await services.createNewUser(firstname, lastname, username, phone_number, email, password);
-        res.status(201).json({ message: "User created" })
+        console.log('Account created')
+        res.status(201).sendFile(path.join(__dirname, '../views/accountcreation.html'))
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
