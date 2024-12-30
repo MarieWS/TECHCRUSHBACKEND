@@ -16,12 +16,12 @@ export const createNewUser = async (req, res) => {
     }
 }
 
-export const createNewProfile = async (req, res, next) => {
+export const createNewProfile = async (req, res) => {
     const UserId = req.user
     const { gender, age, country, region, dietary_preferences, health_goals, activity_levels, allergies, medical_condition, height, weight } = req.body;
     try {
         const userProfile = await services.createNewProfile(gender, age, country, region, dietary_preferences, health_goals, activity_levels, allergies, medical_condition, height, weight, UserId )
-        next()
+        res.status(201).redirect('/api/dashboard')
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
@@ -31,7 +31,6 @@ export const getUserProfile = async (req, res) => {
     const UserId = req.user
     try {
         const profile = await services.getUserProfile(UserId);
-        res.status(200).json(profile)
     } catch (error) {
         res.status(400).json({ error: error.message })
     }

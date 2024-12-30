@@ -32,7 +32,7 @@ const router = express.Router();
 router.post('/register', validateForm, userControllers.createNewUser);
 router.post('/login', login);
 router.post('/newprofile', auth, userControllers.createNewProfile, userControllers.getUserProfile);
-router.get('/profile', auth, userControllers.getUserProfile);
+router.get('/dashboard', auth, userControllers.getUserProfile);
 router.put('/updateprofile', auth, userControllers.updateUserProfile);
 
 router.get('/generatemeal', auth, generateMeal);
