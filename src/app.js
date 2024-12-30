@@ -6,6 +6,7 @@ import router from "./routes.js";
 import swaggerDocs from "./config/swagger.js";
 import swaggerUi from "swagger-ui-express";
 import { connectMongoDB } from "./config/mongodb.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(express.static('./src/views'));
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
+
+app.use(cookieParser());
 
 async function startServer(params) {
     await connectMySQL();

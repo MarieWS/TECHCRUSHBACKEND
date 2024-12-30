@@ -22,11 +22,11 @@
                     your account</h2>
             </div>
             <div class="form-section">
-                <form action="" method="post">
+                <form action="/api/newprofile" method="post">
                 <div class="inner-form-section">
                     <div class="right-column">
 
-                        <h2 class="form-section-header gender">what is your gender?</h2>
+                        <h2 class="form-section-header gender">What is your gender?</h2>
                         <div class="gender-container">
                             <input class="gender-input" type="radio" id="Male" name="gender" value="Male">
                             <label for="Male">Male</label>
@@ -36,15 +36,15 @@
                         </div>
                         <br>
 
-                        <h2 class="form-section-header">where are you from?</h2>
+                        <h2 class="form-section-header">Where are you from?</h2>
                         <div class="location-container">
-                            <input class="location" type="text">
+                            <input class="location" type="text" name="country">
                         </div> <br>
 
 
                         <h2 class="form-section-header">Dietary preference</h2>
                         <div class="Dietary-container">
-                            <select class="Dietary-preference" name="Dietary-preference" id="Dietary-preference">
+                            <select class="Dietary-preference" name="dietary_preferences" id="Dietary-preference">
                                 <option value="Vegetarian">Vegetarian</option>
                                 <option value="Non-Vegetarian">Non-Vegetarian</option>
                                 <option value="Vegan">Vegan</option>
@@ -56,7 +56,7 @@
 
                         <h2 class="form-section-header">Activity level</h2>
                         <div class="Activity-container">
-                            <select class="Activity" name="Activity-level" id="Activity-level">
+                            <select class="Activity" name="activity_levels" id="Activity-level">
                                 <option value="High">High</option>
                                 <option value="Medium">Medium</option>
                                 <option value="Low">Low</option>
@@ -67,7 +67,7 @@
 
                         <h2 class="form-section-header">Medical Condition</h2>
                         <div class="Medical-container">
-                            <select class="Medical" name="Medical-Condition" id="Medical-Condition">
+                            <select class="Medical" name="medical_condition" id="Medical-Condition">
                                 <option value="Hypertension">Hypertension</option>
                                 <option value="Diabetes">Diabetes</option>
                                 <option value="Asthma">Asthma</option>
@@ -80,16 +80,16 @@
 
                         <h2 class="form-section-header">Weight</h2>
                         <div class="weight-container">
-                            <input class="weight" type="number" id="Weight" name="Weight" min="0" max="300">
+                            <input class="weight" type="number" id="Weight" name="weight" min="0" max="300">
                             <span id="Weight"></span>
                         </div>
 
                     </div>
 
                     <div class="left-column">
-                        <h2 class="form-section-header">when were you born?</h2>
+                        <h2 class="form-section-header">What's your Age</h2>
                         <div class="dob-container">
-                            <input class="dob" type="date" id="birrthdate" name="birthdate" placeholder="mm/dd/yyy">
+                            <input class="dob" type="number" id="birrthdate" name="age" placeholder="18">
                         </div>
 
                         <br>
@@ -111,7 +111,7 @@
 
                         <h2 class="form-section-header">Health Goal</h2>
                         <div class="health-container">
-                            <select class="health" name="Health-goal" id="Health-goal">
+                            <select class="health" name="health_goals" id="Health-goal">
                                 <option value="Weight-Loss">Weight-Loss</option>
                                 <option value="Weight-Gain">Weight-Gain</option>
                             </select>
@@ -121,7 +121,7 @@
 
                         <h2 class="form-section-header">Allergies</h2>
                         <div class="allergies-container">
-                            <select class="allergies" name="Allergies" id="Allergies">
+                            <select class="allergies" name="allergies" id="Allergies">
                                 <option value="Gluten">Gluten</option>
                                 <option value="Dairy">Dairy</option>
                                 <option value="Soy">Soy</option>
