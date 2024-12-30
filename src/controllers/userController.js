@@ -31,6 +31,7 @@ export const getUserProfile = async (req, res) => {
     const UserId = req.user
     try {
         const profile = await services.getUserProfile(UserId);
+        res.status(200).render('dashboard', {profile: profile})
     } catch (error) {
         res.status(400).json({ error: error.message })
     }

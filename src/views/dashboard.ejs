@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4c58d39949.js" crossorigin="anonymous"></script>
 </head>
@@ -54,47 +54,44 @@
             </div>
             <form class="form">
                 <div class="form-group">
-                    <label>What is your gender?</label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="gender" required> Male</label>
-                        <label><input type="radio" name="gender"> Female</label>
-                    </div>
+                    <label>Gender</label>
+                    <input id="inputs" type="text" value= "<%= profile.gender %>" readonly required>
                 </div>
                 <div class="form-group">
-                    <label>When were you born?</label>
-                    <input id="inputs" type="date" required>
+                    <label>Age</label>
+                    <input id="inputs" type="number" value= "<%= profile.age %>" readonly required>
                 </div>
                 <div class="form-group">
                     <label>Where are you from?</label>
-                    <input id="inputs" type="text" placeholder="Enter location" required>
+                    <input id="inputs" type="text" placeholder="Enter location" value= "<%= profile.country %>" readonly required>
                 </div>
                 <div class="form-group">
                     <label>Dietary Preference</label>
-                    <input id="inputs" type="text" placeholder="e.g. Vegetarian" required>
+                    <input id="inputs" type="text" placeholder="e.g. Vegetarian" value= "<%= profile.dietary_preferences %>" readonly required>
                 </div>
                 <div class="form-group">
                     <label>Activity level</label>
-                    <input id="inputs" type="text" placeholder="e.g.High" required>
+                    <input id="inputs" type="text" placeholder="e.g.High" value= "<%= profile.activity_levels %>" readonly required>
                 </div>
                 <div class="form-group">
                     <label>Health goals</label>
-                    <input id="inputs" type="text" placeholder="e.g. Weight loss" required>
+                    <input id="inputs" type="text" placeholder="e.g. Weight loss" value= "<%= profile.health_goals %>" readonly required>
                 </div>
                 <div class="form-group">
                     <label>Allergies</label>
-                    <input id="inputs" type="text" placeholder="e.g. Diabetic" required>
+                    <input id="inputs" type="text" placeholder="e.g. Diabetic" value= "<%= profile.allergies %>" readonly required>
                 </div>
                 <div class="form-group">
                     <label>Height</label>
-                    <input id="inputs" type="text" placeholder="e.g. 170cm" required>
+                    <input id="inputs" type="text" placeholder="e.g. 170cm" value= "<%= profile.height %>" readonly required>
                 </div>
                 <div class="form-group">
                     <label>Medical Condition</label>
-                    <input id="inputs" type="text" placeholder="e.g. Hypertension" required>
+                    <input id="inputs" type="text" placeholder="e.g. Hypertension" value= "<%= profile.medical_condition %>" readonly required>
                 </div>
                 <div class="form-group">
                     <label>Weight</label>
-                    <input id="inputs" type="text" placeholder="e.g. 75kg" required>
+                    <input id="inputs" type="text" placeholder="e.g. 75kg" value= "<%= profile.weight %>" readonly required>
                 </div>
                 
             </form>
