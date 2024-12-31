@@ -31,7 +31,12 @@ export const getUserProfile = async (req, res) => {
     const UserId = req.user
     try {
         const profile = await services.getUserProfile(UserId);
+        console.log(profile)
+        if (!profile) {
+            return res.status(200).sendFile(path.join(__dirname, '../views/form.html'));
+        } else {
         res.status(200).render('dashboard', {profile: profile})
+        }
     } catch (error) {
         res.status(400).json({ error: error.message })
     }

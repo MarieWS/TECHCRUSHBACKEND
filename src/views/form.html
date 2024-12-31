@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>form</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
@@ -16,7 +16,7 @@
     <section class="container">
         <div class="inner-container">
             <div class="logo-container">
-                <img class="logo" src="delish nutrio logo.jpg" alt="logo" width="100px" height="100px">
+                <img class="logo" src="/delish nutrio logo.jpg" alt="logo" width="100px" height="100px">
 
                 <h2 class="logo-text">Complete this form in order to fully <br> <span class="logo-setup">Set up</span>
                     your account</h2>
@@ -68,6 +68,7 @@
                         <h2 class="form-section-header">Medical Condition</h2>
                         <div class="Medical-container">
                             <select class="Medical" name="medical_condition" id="Medical-Condition">
+                                <option value="Hypertension">None</option>
                                 <option value="Hypertension">Hypertension</option>
                                 <option value="Diabetes">Diabetes</option>
                                 <option value="Asthma">Asthma</option>
@@ -78,7 +79,7 @@
                         <br>
 
 
-                        <h2 class="form-section-header">Weight</h2>
+                        <h2 class="form-section-header">Weight (kg)</h2>
                         <div class="weight-container">
                             <input class="weight" type="number" id="Weight" name="weight" min="0" max="300">
                             <span id="Weight"></span>
@@ -89,7 +90,7 @@
                     <div class="left-column">
                         <h2 class="form-section-header">What's your Age</h2>
                         <div class="dob-container">
-                            <input class="dob" type="number" id="birrthdate" name="age" placeholder="18">
+                            <input class="dob" type="number" id="birrthdate" name="age" placeholder="e.g. 18">
                         </div>
 
                         <br>
@@ -132,7 +133,7 @@
                         <br>
 
 
-                        <h2 class="form-section-header">Height</h2>
+                        <h2 class="form-section-header">Height (cm)</h2>
                         <div class="height-container">
                             <input class="height" type="number" id="height" name="height" min="0" max="250">
                             <span id="height-display"></span>

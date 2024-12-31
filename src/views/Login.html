@@ -48,9 +48,9 @@
             <div class="login-section">
                 <h2>Welcome Back!</h2>
                 <p>Please log in to your account to get started</p>
-                <form id="login-form">
+                <form id="login-form" action="api/login" method="POST">
                     <label for="email">Email or Phone Number</label>
-                    <input type="text" id="email" name="email" placeholder="Enter your email or phone number" required>
+                    <input type="text" id="email" name="emailOrPhone" placeholder="Enter your email or phone number" required>
 
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
@@ -58,7 +58,8 @@
                     <a href="#" class="forgot-password">Forgotten Password?</a>
 
                     <!-- <button type="submit" class="login-btn"><a href="L">Login</a></button> -->
-                    <button type="submit" class="login-btn"><a href="dashboard.html"> Login</a></button>
+                    <button type="submit" class="login-btn">Login</a></button>
+                </form>
 
                     <div class="divider">or</div>
 
@@ -67,40 +68,10 @@
 
                     <p class="create-account">Don’t have an account? <a href="register.html">Create an
                             Account.</a></p>
-                </form>
             </div>
         </div>
     </div>
 
-    <script>
-        const loginform = document.getElementById('login-form');
-        loginform.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = loginform.elements['emal'].value;
-            const password = loginform.elements['password'].value;
-
-            fetch('/api/login', {
-                method: 'POST',
-                headers: {
-                    'content-Type': 'application/json'
-                },
-                body:
-                    JSON.stringify({
-                        email, password
-                    })
-            })
-
-                .then((Response) => 
-                Response.json())
-                .then((data) =>
-                    console.log(data))
-                .catch((error) =>
-                    console.error(error));
-
-
-        })
-
-    </script>
 </body>
 
 </html>
