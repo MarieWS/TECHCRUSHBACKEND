@@ -2,7 +2,7 @@ import { User } from "../models.js";
 import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken';
 
-const generateToken = (id) => {
+export const generateJwtToken = (id) => {
     return jwt.sign(
         { userID: id }, process.env.JWT_SECRET,
         { expiresIn: process.env.JWT_EXPIRATION })
@@ -28,7 +28,8 @@ export const login = async (req, res) => {
     if (!user || !bcrypt.compare(password, user.password)) {
         return res.status(400).json({ message: "Invalid email or password" });
     } else {
-        const token = generateToken(user.id)
+        const token = generateJwtToken(user.id)
+        res.cookie("jwt", token, { httpOnly: true, maxAge: 3 * 60 * 60 * 1000 });
         return res.status(200).json({ message: "Login successful", token })
     }
 }

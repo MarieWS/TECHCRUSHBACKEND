@@ -5,7 +5,7 @@ import { connectMySQL } from "./config/mysqldb.js";
 import router from "./routes.js";
 import swaggerDocs from "./config/swagger.js";
 import swaggerUi from "swagger-ui-express";
-import { connectMongoDB } from "./config/mongodb.js";
+// import { connectMongoDB } from "./config/mongodb.js";
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}))
 
 async function startServer(params) {
     await connectMySQL();
-    await connectMongoDB()
+    // await connectMongoDB()
     
     app.use('/api', router)
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));

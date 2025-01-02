@@ -5,10 +5,11 @@ import { sendVerifyEmailLink } from "../services/emailServices.js";
 export const createNewUser = async (req, res) => {
     const { firstname, lastname, username, phone_number, email, password } = req.body;
     try {
-        const {token, tokenExpires} = services.generateVerifyEmailToken()
-        console.log(token, tokenExpires);
-        const user = await services.createNewUser(firstname, lastname, username, phone_number, email, password, token, tokenExpires);
-        sendVerifyEmailLink(email, token);
+        const {emailToken, emailTokenExpires} = services.generateVerifyEmailToken()
+        const user = await services.createNewUser(firstname, lastname, username, phone_number, email, password, emailToken, emailTokenExpires);
+        sendVerifyEmailLink(email, emailToken);
+        const jwtToken = user;
+        res.cookie("jwt", jwtToken, { httpOnly: true, maxAge: 3 * 60 * 60 * 1000 });
         res.status(201).json({ message: "User created" })
     } catch (error) {
         res.status(400).json({ error: error.message })
@@ -17,7 +18,7 @@ export const createNewUser = async (req, res) => {
 
 const verifyEmail = async (req, res) => {
     const { token } = req.params;
-    
+
 }
 
 export const createNewProfile = async (req, res) => {
