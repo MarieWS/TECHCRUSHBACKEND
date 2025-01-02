@@ -1,13 +1,23 @@
 import * as services from "../services.js";
+import { sendVerifyEmailLink } from "../services/emailServices.js";
+
 
 export const createNewUser = async (req, res) => {
     const { firstname, lastname, username, phone_number, email, password } = req.body;
     try {
-        const user = await services.createNewUser(firstname, lastname, username, phone_number, email, password);
+        const {token, tokenExpires} = services.generateVerifyEmailToken()
+        console.log(token, tokenExpires);
+        const user = await services.createNewUser(firstname, lastname, username, phone_number, email, password, token, tokenExpires);
+        sendVerifyEmailLink(email, token);
         res.status(201).json({ message: "User created" })
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
+}
+
+const verifyEmail = async (req, res) => {
+    const { token } = req.params;
+    
 }
 
 export const createNewProfile = async (req, res) => {
