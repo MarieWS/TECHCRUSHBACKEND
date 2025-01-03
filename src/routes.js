@@ -30,6 +30,7 @@ const router = express.Router();
  * type: string
 */
 router.post('/register', validateForm, userControllers.createNewUser);
+router.get('/verifyemail/:token', userControllers.verifyEmail); 
 router.post('/login', login);
 router.post('/newprofile', auth, userControllers.createNewProfile);
 router.get('/profile', auth, userControllers.getUserProfile);

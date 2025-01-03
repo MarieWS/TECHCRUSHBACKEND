@@ -16,7 +16,7 @@ export const connectMySQL = async () => {
   try {
     await mysqldb.authenticate();
     console.log('Connection has been established successfully.');
-    await mysqldb.sync({force: true});
+    await mysqldb.sync();
   } catch (error) {
     console.error('Unable to connect to the database:', error);
   }

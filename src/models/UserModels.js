@@ -12,7 +12,7 @@ export const User = mysqldb.define(
         password: {type: DataTypes.STRING, allowNull: false},
         verifyEmailToken: {type: DataTypes.STRING, allowNull: true},
         verifyEmailTokenExpires: {type: DataTypes.DATE, allowNull: true},
-        verified: {type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false},
+        isVerified: {type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false},
     },
     {timestamps: true}
 )

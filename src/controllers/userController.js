@@ -16,9 +16,19 @@ export const createNewUser = async (req, res) => {
     }
 }
 
-const verifyEmail = async (req, res) => {
+export const verifyEmail = async (req, res) => {
     const { token } = req.params;
+    try {
+        const verifyEmail = await services.verifyEmail(token);
 
+        if (!verifyEmail) {
+            return res.status(400).json({ message: "Invalid or expired token" });
+        }
+        
+        res.status(200).json({ message: "Email verified" })
+    } catch (error) {
+        res.status(400).json({ error: error.message }) 
+    }
 }
 
 export const createNewProfile = async (req, res) => {
