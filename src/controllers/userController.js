@@ -8,8 +8,6 @@ export const createNewUser = async (req, res) => {
         const {emailToken, emailTokenExpires} = services.generateVerifyEmailToken()
         const user = await services.createNewUser(firstname, lastname, username, phone_number, email, password, emailToken, emailTokenExpires);
         sendVerifyEmailLink(email, emailToken);
-        const jwtToken = user;
-        res.cookie("jwt", jwtToken, { httpOnly: true, maxAge: 3 * 60 * 60 * 1000 });
         res.status(201).json({ message: "User created" })
     } catch (error) {
         res.status(400).json({ error: error.message })
@@ -24,7 +22,7 @@ export const verifyEmail = async (req, res) => {
         if (!verifyEmail) {
             return res.status(400).json({ message: "Invalid or expired token" });
         }
-        
+
         res.status(200).json({ message: "Email verified" })
     } catch (error) {
         res.status(400).json({ error: error.message }) 
