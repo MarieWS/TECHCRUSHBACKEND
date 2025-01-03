@@ -6,6 +6,13 @@ import { Op } from "sequelize";
 export const createNewUser = async (firstname, lastname, username, phone_number, email, password, verifyEmailToken, verifyEmailTokenExpires) => {
     const passwordHash = bcrypt.hashSync(password, 10)
     const user = await User.create({firstname, lastname, username, phone_number, email, password: passwordHash, verifyEmailToken, verifyEmailTokenExpires});
+    return user;
+}
+
+export const updateUser = async (firstname, lastname, username, phone_number, email, password, verifyEmailToken, verifyEmailTokenExpires, UserId) => {
+    const user = await User.findOne({where: {id: UserId}});
+    const passwordHash = bcrypt.hashSync(password, 10)
+    const updatedUser = await user.update({firstname, lastname, username, phone_number, email, password:passwordHash, verifyEmailToken, verifyEmailTokenExpires});
 }
 
 export const generateVerifyEmailToken = () => {

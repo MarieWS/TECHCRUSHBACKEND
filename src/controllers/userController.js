@@ -4,10 +4,19 @@ import { sendVerifyEmailLink } from "../services/emailServices.js";
 
 export const createNewUser = async (req, res) => {
     const { firstname, lastname, username, phone_number, email, password } = req.body;
+    const {emailToken, emailTokenExpires} = services.generateVerifyEmailToken();
+
     try {
-        const {emailToken, emailTokenExpires} = services.generateVerifyEmailToken()
         const user = await services.createNewUser(firstname, lastname, username, phone_number, email, password, emailToken, emailTokenExpires);
-        sendVerifyEmailLink(email, emailToken);
+
+        // Send email verification link
+        try {
+            await sendVerifyEmailLink(email, emailToken);
+        } catch (emailerror) {
+            const updatedUser = await services.updateUser(firstname, lastname, username, phone_number, email, password, null, null, user.id);
+            return res.status(400).json({ message: "User created but unable to send verification link. Please, make sure you verify your email" });
+        }
+
         res.status(201).json({ message: "User created" })
     } catch (error) {
         res.status(400).json({ error: error.message })
