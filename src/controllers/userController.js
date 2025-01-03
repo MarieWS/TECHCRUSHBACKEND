@@ -1,4 +1,4 @@
-import * as services from "../services.js";
+import * as services from "../services/userServices.js";
 import { sendVerifyEmailLink } from "../services/emailServices.js";
 
 

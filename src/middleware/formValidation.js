@@ -1,5 +1,5 @@
 import { body, validationResult } from "express-validator";
-import {User} from "../models.js";
+import {User} from "../models/UserModels.js";
 
 // Custom validations
 let validateIfEmailExists = async (value) => {

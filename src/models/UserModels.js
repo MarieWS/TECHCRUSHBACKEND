@@ -1,4 +1,4 @@
-import mysqldb from "./config/mysqldb.js";
+import mysqldb from "../config/mysqldb.js";
 import { DataTypes } from "sequelize";
 
 export const User = mysqldb.define(
