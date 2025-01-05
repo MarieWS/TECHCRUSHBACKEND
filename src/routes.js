@@ -7,28 +7,6 @@ import { generateMeal } from "./controllers/mealControllers.js";
 
 const router = express.Router();
 
-/** @swagger
- * /api/register:
- *  post: 
- *   summary: Register a new user
- *  requestBody:
- *   required: true
- *  content:
- *  application/json:
- *  schema:
- *  type: object
- * properties:
- * firstname:
- * type: string
- * lastname:
- * type: string
- * username:
- * type: string
- * phone_number:
- * type: string
- * email:
- * type: string
-*/
 router.post('/register', validateForm, userControllers.createNewUser);
 router.get('/verifyemail/:token', userControllers.verifyEmail); 
 router.post('/login', login);
