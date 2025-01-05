@@ -5,7 +5,7 @@ const doc = {
     title: 'Delish Nutrio ',
     description: 'This is the API documentation for Delish Nutrio',
   },
-  host: 'localhost:3000'
+  host: 'delish-nutrio.onrender.com'
 };
 
 const outputFile = './swagger-output.json';
