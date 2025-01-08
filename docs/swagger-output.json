@@ -5,7 +5,7 @@
     "description": "This is the API documentation for Delish Nutrio",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "delish-nutrio.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"

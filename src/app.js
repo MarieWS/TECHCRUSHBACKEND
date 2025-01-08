@@ -7,17 +7,18 @@ import swaggerUi from "swagger-ui-express";
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const swaggerDocs = require( "../docs/swagger-output.json");
-
-// import { connectMongoDB } from "./config/mongodb.js";
+import cors from "cors";
+import { connectMongoDB } from "./config/mongodb.js";
 
 const app = express();
 
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
-
+ 
 async function startServer(params) {
     await connectMySQL();
-    // await connectMongoDB()
+    await connectMongoDB()
     
     app.use('/api', router)
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
