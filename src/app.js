@@ -13,7 +13,7 @@ import { connectMongoDB } from "./config/mongodb.js";
 const app = express();
 
 const corsOptions = {
-    origin: true,
+    // origin: true,
     credentials: true,
 };
 app.use(cors(corsOptions));
