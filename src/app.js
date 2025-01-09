@@ -2,23 +2,25 @@ import express from "express";
 import { config } from "dotenv";
 config();
 import { connectMySQL } from "./config/mysqldb.js";
+import { connectMongoDB } from "./config/mongodb.js";
 import router from "./routes.js";
 import swaggerUi from "swagger-ui-express";
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const swaggerDocs = require( "../docs/swagger-output.json");
+import cookieParser from "cookie-parser";
 import cors from "cors";
-import { connectMongoDB } from "./config/mongodb.js";
 
 const app = express();
 
 app.use(cors({
-    origin: '*',  
+    origin: true,  
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',  
     preflightContinue: false,  
     optionsSuccessStatus: 204  }));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
+app.use(cookieParser());
  
 async function startServer(params) {
     await connectMySQL();

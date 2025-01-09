@@ -29,7 +29,16 @@ export const login = async (req, res) => {
         return res.status(400).json({ message: "Invalid email or password" });
     } else {
         const token = generateJwtToken(user.id)
-        res.cookie("jwt", token, { httpOnly: true, maxAge: 3 * 60 * 60 * 1000 });
-        return res.status(200).json({ message: "Login successful", token })
+        res.cookie("jwtToken", token, { 
+            httpOnly: true, 
+            maxAge: 12 * 60 * 60 * 1000,
+            sameSite: "strict",
+            secure: true});
+        return res.status(200).json({ message: "Login successful"})
     }
+}
+
+export const logout = async (req, res) => {
+    res.clearCookie("jwtToken");
+    res.status(200).json({ message: "Logout successful" });
 }

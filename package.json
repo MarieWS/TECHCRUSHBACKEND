@@ -20,6 +20,7 @@
   "description": "This is the backend codebase of Delish Nutrio web app. This is an app that gives personalized nutrition.",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
