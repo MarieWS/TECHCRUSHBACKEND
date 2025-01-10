@@ -27,6 +27,7 @@ export const verifyEmail = async (token) => {
     if (!user) return;
 
     const updatedUser = await user.update({isVerified: true, verifyEmailToken: null, verifyEmailTokenExpires: null});
+    return updatedUser;
 }
 
 export const createNewProfile = async (gender, age, country, region, dietary_preferences, health_goals, activity_levels, allergies, medical_condition, height, weight, UserId) => {

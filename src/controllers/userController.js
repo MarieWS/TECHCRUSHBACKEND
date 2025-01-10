@@ -14,7 +14,8 @@ export const createNewUser = async (req, res) => {
             await sendVerifyEmailLink(email, emailToken);
         } catch (emailerror) {
             const updatedUser = await services.updateUser(firstname, lastname, username, phone_number, email, password, null, null, user.id);
-            return res.status(400).json({ message: "User created but unable to send verification link. Please, make sure you verify your email" });
+            
+            return res.status(201).json({ message: "User created but unable to send verification link. Please, make sure you verify your email", error: emailerror.message });
         }
 
         res.status(201).json({ message: "User created" })
