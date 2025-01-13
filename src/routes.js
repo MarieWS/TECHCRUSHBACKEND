@@ -8,7 +8,7 @@ import { generateMeal } from "./controllers/mealControllers.js";
 const router = express.Router();
 
 router.post('/register', validateForm, userControllers.createNewUser);
-router.get('/verifyemail', userControllers.verifyEmail); 
+router.get('/verifyemail/:token', userControllers.verifyEmail); 
 router.post('/login', authController.login);
 router.get('/logout', authController.logout);
 router.post('/newprofile', auth, userControllers.createNewProfile);
