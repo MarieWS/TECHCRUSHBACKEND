@@ -8,7 +8,7 @@
   "host": "delish-nutrio.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/api/register": {
