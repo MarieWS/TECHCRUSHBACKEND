@@ -104,6 +104,16 @@
         }
       }
     },
+    "/api/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/newprofile": {
       "post": {
         "description": "",
