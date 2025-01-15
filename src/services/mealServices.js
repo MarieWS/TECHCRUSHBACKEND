@@ -11,7 +11,7 @@ export const basalMetabolicRate = (age, gender, weight, height) => {
 
 export const totalDailyEnergyExpenditure = (basalMetabolicRate, activityLevel) => {
     switch (activityLevel) {
-        case 'sedentary':
+        case 'Inactive':
             return basalMetabolicRate * 1.2
         case 'lightly active':
             return basalMetabolicRate * 1.375
@@ -25,9 +25,50 @@ export const totalDailyEnergyExpenditure = (basalMetabolicRate, activityLevel) =
 }
 
 export const generateMeal = async (dietary_preferences, health_goals, medical_condition, region) => {
-    const meals = await Meal.find({ 
-        diet_type: {$regex: dietary_preferences, $options: 'i'}, 
-        health_benefit: {$regex: health_goals, $options: 'i'}
+    if (dietary_preferences == 'none') {
+        dietary_preferences = '';
+    }
+    const meals = await Meal.find({
+        diet_type: { $regex: dietary_preferences, $options: 'i' },
+        health_benefit: { $regex: health_goals, $options: 'i' }
     });
-    console.log(meals);
+    const filteredMeals = meals.filter(meal => !meal.not_suitable_for.includes(medical_condition));
+
+    const breakfastMeals = [];
+    const lunchMeals = [];
+    const dinnerMeals = [];
+    const snacks = [];
+    const otherMeals = [];
+
+    filteredMeals.forEach(meal => {
+        const bestEatenAs = meal.best_eaten_as.toLowerCase();
+
+        switch (true) {
+            case bestEatenAs.includes('breakfast'):
+                breakfastMeals.push(meal.food_name);
+                break;
+            case bestEatenAs.includes('lunch'):
+                lunchMeals.push(meal.food_name);
+                break;
+            case bestEatenAs.includes('dinner'):
+                dinnerMeals.push(meal.food_name);
+                break;
+            case bestEatenAs.includes('snacks'):
+                snacks.push(meal.food_name);
+                break;
+            default:
+                otherMeals.push(meal.food_name);
+        }
+    });
+
+    const mealPlan = {
+        breakfast: breakfastMeals,
+        lunch: lunchMeals,
+        dinner: dinnerMeals,
+        snacks: snacks,
+        other: otherMeals
+    }
+
+    return mealPlan;
+
 }

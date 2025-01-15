@@ -10,7 +10,7 @@ const mealSchema = new mongoose.Schema({
     spice_level: { type: String, required: true },
     price_range: { type: String, required: true },
     nutritional_content: { type: String, required: true },
-    calories_contained: { type: Number, required: true },
+    calories_contained: { type: String, required: true },
     diet_type: { type: String, required: true },
     best_eaten_as: { type: String, required: true },
     suitable_for: { type: [String], required: true },

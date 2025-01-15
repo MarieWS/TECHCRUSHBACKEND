@@ -15,5 +15,5 @@ router.post('/newprofile', auth, userControllers.createNewProfile);
 router.get('/profile', auth, userControllers.getUserProfile);
 router.put('/updateprofile', auth, userControllers.updateUserProfile);
 
-// router.get('/generatemeal', auth, generateMeal);
+router.get('/generatemeal', auth, generateMeal);
 export default router
