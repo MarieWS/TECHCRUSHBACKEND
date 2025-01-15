@@ -15,12 +15,11 @@ const transporter = nodemailer.createTransport({
 export const sendVerifyEmailLink = async (email, token) => {
     const verifyEmailLink = `http://${process.env.FRONTEND_URL}/verifyEmail.html?token=${token}`;
 
-    console.log(verifyEmailLink);
     const message = {
         from: process.env.EMAIL_USER,
         to: email,
         subject: "Delish Nutrio - Verify Your Email",
-        html: `<p>Thank you for registering with Delish Nutrio! <br> Click the link below to confirm your email address</p> <p><a href='${verifyEmailLink}'>${verifyEmailLink}</a></p>`,
+        html: `<p>Thank you for registering with Delish Nutrio! <br> Click the link below to confirm your email address</p> <p><a href='${verifyEmailLink}'>${verifyEmailLink}</a><br><b>Please Note that this link will expire in the next 1 Hour!</b></p>`,
     }
 
     await transporter.sendMail(message);

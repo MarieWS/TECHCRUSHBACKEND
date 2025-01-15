@@ -17,7 +17,7 @@ export const updateUser = async (firstname, lastname, username, phone_number, em
 
 export const generateVerifyEmailToken = () => {
     const emailToken = uuidv4();
-    const emailTokenExpires = new Date(Date.now() + 10 * 60 * 1000);
+    const emailTokenExpires = new Date(Date.now() + 60 * 60 * 1000);
     return {emailToken, emailTokenExpires}
 }
 
