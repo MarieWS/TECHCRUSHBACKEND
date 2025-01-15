@@ -17,7 +17,8 @@ app.use(cors({
     origin: true,  
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',  
     preflightContinue: false,  
-    optionsSuccessStatus: 204  }));
+    optionsSuccessStatus: 204,
+    credentials: true}));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser());
