@@ -3,7 +3,7 @@ import { sendVerifyEmailLink } from "../services/emailServices.js";
 
 
 export const createNewUser = async (req, res) => {
-    const { firstname, lastname, username, phone_number, email, password } = req.body;
+    const { firstname, lastname, username, phone_number, email, password, confirmPassword } = req.body;
     const {emailToken, emailTokenExpires} = services.generateVerifyEmailToken();
 
     try {
