@@ -5,7 +5,6 @@ export const generateMeal = async (req, res) => {
 
     try {
         const meals = await mealServices.generateMeal(dietary_preferences, health_goals, medical_condition, region);
-        console.log(meals);
         res.status(200).json({ message: "Meal generated", meals });
     } catch (error) {
         res.status(400).json({ error: error.message });
