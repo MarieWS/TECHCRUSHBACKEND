@@ -25,9 +25,8 @@ export const login = async (req, res) => {
     }
 
     // check if password matches email/phone number
-    if (!user || !bcrypt.compare(password, user.password)) {
-        return res.status(400).json({ message: "Invalid email or password" });
-    } else {
+    const passwordCheck = await bcrypt.compare(password, user.password);
+    if (user && passwordCheck) {
         const token = generateJwtToken(user.id)
         res.cookie("jwtToken", token, { 
             httpOnly: true, 
@@ -35,6 +34,8 @@ export const login = async (req, res) => {
             sameSite: "None",
             secure: true});
         return res.status(200).json({ message: "Login successful"})
+    } else {
+        return res.status(400).json({ message: "Invalid email or password" });
     }
 }
 
