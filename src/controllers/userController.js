@@ -24,6 +24,39 @@ export const createNewUser = async (req, res) => {
     }
 }
 
+export const getUser = async (req, res) => {
+    const userId = req.user
+    try {
+        const user = await services.getUser(userId);
+        res.status(200).json(user)
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
+export const updateUser = async (req, res) => {
+    const userId = req.user
+    const { firstname, lastname, username, phone_number, email, password, confirmPassword } = req.body;
+
+    try {
+        const updatedUser = await services.updateUser(firstname, lastname, username, phone_number, email, password, null, null, userId);
+        res.clearCookie("jwtToken");
+        res.status(200).json({ message: "User updated, Please, log in again", updatedUser })
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
+
+export const deleteUser = async (req, res) => {
+    const UserId = req.user
+    try {
+        const user = await services.deleteUser(UserId);
+        res.clearCookie("jwtToken");
+        res.status(200).json({ message: "User deleted" })
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
+
 export const verifyEmail = async (req, res) => {
     const { token } = req.params;
     try {

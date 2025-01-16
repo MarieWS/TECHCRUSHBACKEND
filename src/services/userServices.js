@@ -9,10 +9,21 @@ export const createNewUser = async (firstname, lastname, username, phone_number,
     return user;
 }
 
-export const updateUser = async (firstname, lastname, username, phone_number, email, password, verifyEmailToken, verifyEmailTokenExpires, UserId) => {
-    const user = await User.findOne({where: {id: UserId}});
+export const getUser = async (userId) => {
+    const user = await User.findOne({where: {id: userId}});
+    return user;
+}
+
+export const updateUser = async (firstname, lastname, username, phone_number, email, password, verifyEmailToken, verifyEmailTokenExpires, userId) => {
+    const user = await User.findOne({where: {id: userId}});
     const passwordHash = bcrypt.hashSync(password, 10)
     const updatedUser = await user.update({firstname, lastname, username, phone_number, email, password:passwordHash, verifyEmailToken, verifyEmailTokenExpires});
+    return updatedUser;
+}
+
+export const deleteUser = async (UserId) => {
+    const user = await User.findOne({where: {id: UserId}});
+    const deletedUser = await user.destroy();
 }
 
 export const generateVerifyEmailToken = () => {
